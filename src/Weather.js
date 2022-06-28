@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './Weather.css';
 import cloudy from './images/cloud.png';
 
+const APIKey = '69eb186cf73c3b669b9897029eabbac6';
+
 export default function Weather() {
+	let city = 'paris';
+	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`;
+
+	// const [loaded, setLoaded] = useState(false);
+	const [weatherData, setWeatherData] = useState(null);
+
+	function showData(response) {
+		setWeatherData(Math.round(response.data.main.temp));
+	}
+
+	function handleSubmit(event) {
+		event.preventDefault();
+		axios
+			.get(apiUrl)
+			.then(showData)
+			.catch((error) => console.log(error));
+	}
+
 	return (
 		<div className='container'>
 			<div className='weather-app-wrapper'>
 				<div className='weather-app'>
 					<div className='row'>
 						<div className='col-11'>
-							<form id='search-form' className='mb-4'>
+							<form id='search-form' className='mb-4' onSubmit={handleSubmit}>
 								<div className='row'>
 									<div className='col-9'>
 										<input
@@ -38,7 +59,7 @@ export default function Weather() {
 					</div>
 					<div className='overview'>
 						<h1 id='city'>Paris</h1>
-						<ul>
+						<ul className='p-0'>
 							<li id='description'>Cloudy</li>
 							<li className='date-update'>
 								Last updated at: <span id='date'>14:28</span>
@@ -55,7 +76,7 @@ export default function Weather() {
 									id='icon'
 								/>
 								<div className='float-start'>
-									<span id='temperature'>23</span>
+									<span id='temperature'>{weatherData}</span>
 									<span className='units'>
 										<a href='/' id='celcius' className='active'>
 											ºC
