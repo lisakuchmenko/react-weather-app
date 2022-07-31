@@ -4,7 +4,7 @@ import Weather from './Weather';
 export default function App() {
 	return (
 		<div className='App'>
-			<Weather />
+			<Weather defaultCity='Oslo' />
 			<p className='text-center mt-2 text-muted code-link'>
 				<a
 					href='https://github.com/lisakuchmenko/react-weather-app'
