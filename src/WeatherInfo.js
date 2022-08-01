@@ -1,5 +1,6 @@
 import React from 'react';
 import FormattedDate from './FormattedDate';
+import WeatherIcon from './WeatherIcon';
 
 export default function WeatherInfo({ data }) {
 	return (
@@ -7,7 +8,7 @@ export default function WeatherInfo({ data }) {
 			<div className='overview'>
 				<h1 id='city'>{data.city}</h1>
 				<ul className='p-0'>
-					<li id='description'>Cloudy</li>
+					<li id='description'>{data.desc}</li>
 					<li className='date-update'>
 						Last updated at:{' '}
 						<span id='date'>
@@ -19,12 +20,10 @@ export default function WeatherInfo({ data }) {
 			<div className='row'>
 				<div className='col-6'>
 					<div className='clearfix weather-temperature'>
-						<img
-							src={data.img}
-							alt={data.desc}
-							className='float-start'
-							id='icon'
-						/>
+						<div className='float-start' id='icon'>
+							<WeatherIcon code={data.icon} />
+						</div>
+
 						<div className='float-start'>
 							<span id='temperature'>{data.temp}</span>
 							<span className='units'>

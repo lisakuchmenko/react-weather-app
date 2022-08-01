@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
 import WeatherInfo from './WeatherInfo';
 import './Weather.css';
 
@@ -20,7 +19,8 @@ export default function Weather({ defaultCity }) {
 			desc: response.data.weather[0].description,
 			humidity: response.data.main.humidity,
 			wind: response.data.wind.speed,
-			img: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+			// img: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+			icon: response.data.weather[0].icon,
 		});
 	}
 

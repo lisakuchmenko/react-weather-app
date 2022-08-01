@@ -62,7 +62,7 @@ ul {
 }
 
 li {
-	color: #9c9898;
+	color: #525252;
 	font-size: 16px;
 	list-style: none;
 	line-height: 19px;
@@ -94,6 +94,10 @@ li::first-letter {
 	line-height: 1;
 	text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
 		1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#celcius {
+	margin-right: 2px;
 }
 
 .weather-temperature .units {
