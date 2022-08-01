@@ -69,11 +69,11 @@ export default function Weather({ defaultCity }) {
 									</div>
 								</form>
 							</div>
-							<div className='col-1 ps-0'>
+							{/* <div className='col-1 ps-0'>
 								<button className='btn btn-primary' id='geolocation'>
 									<i className='fa-solid fa-location-dot'></i>
 								</button>
-							</div>
+							</div> */}
 						</div>
 						<WeatherInfo data={weatherData} />
 					</div>
