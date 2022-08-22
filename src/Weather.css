@@ -111,6 +111,10 @@ li::first-letter {
 	font-weight: 300;
 }
 
+.forecast {
+	margin-top: 10px;
+}
+
 .weather-forecast {
 	margin-top: 30px;
 	text-align: center;
@@ -120,6 +124,7 @@ li::first-letter {
 .weather-tab {
 	margin: 0 5px;
 	padding: 5px 0;
+	text-align: center;
 	background-color: #f2dbd4;
 	font-weight: 300;
 	border-radius: 10px;

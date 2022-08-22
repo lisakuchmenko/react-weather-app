@@ -26,7 +26,12 @@ export default function WeatherInfo({ data }) {
 						</div>
 
 						<div className='float-start'>
-							<WeatherTemp celcius={data.temp} />
+							<span id='temperature'>{data.temp}</span>
+							<span className='units'>
+								<span id='celcius' className='active'>
+									ºC
+								</span>
+							</span>
 						</div>
 					</div>
 				</div>

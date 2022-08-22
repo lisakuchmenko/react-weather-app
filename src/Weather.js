@@ -4,7 +4,7 @@ import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
 import './Weather.css';
 
-const APIKey = '69eb186cf73c3b669b9897029eabbac6';
+const APIKey = '4c6c3c4d65043e72ce4d5af49726feb8';
 
 export default function Weather({ defaultCity }) {
 	const [weatherData, setWeatherData] = useState({ loaded: false });
